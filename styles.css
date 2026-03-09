@@ -1,0 +1,199 @@
+/* ================= GENERAL STYLES ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.section-container {
+    padding: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ================= HEADER SECTION ================= */
+#main-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #222;
+    color: white;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Navigation */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for navigation */
+.nav-links li a:hover {
+    color: #00bcd4;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Child selector */
+.about-content > p {
+    font-size: 18px;
+}
+
+/* ================= PROJECTS SECTION ================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation for project cards */
+.project-card:hover {
+    animation: cardHover 0.4s forwards;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ================= SKILLS SECTION ================= */
+.skills-list {
+    list-style: none;
+    max-width: 400px;
+    margin: auto;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for skills */
+.skills-list li:hover {
+    background: #00bcd4;
+    color: white;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Focus effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+/* Submit button */
+.contact-form button {
+    padding: 10px;
+    border: none;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for submit */
+.contact-form button:hover {
+    background: #00bcd4;
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* Fade-in animation for header */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scale + shadow animation for project cards */
+@keyframes cardHover {
+    from {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    to {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    #main-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
